@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudySwap KZ — IT курстар платформасы">
+    <title>Курстар — StudySwap KZ</title>
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header__inner">
+            <a href="index.html" class="logo"><b>StudySwap</b><span>KZ</span></a>
+            <button class="burger" id="burger" aria-label="Мәзірді ашу">☰</button>
+            <nav class="nav" id="nav"><ul class="nav__list"><li><a href="index.html" class="nav__link">Басты</a></li><li><a href="courses.html" class="nav__link active">Курстар</a></li><li><a href="profile.html" class="nav__link">Профиль</a></li></ul></nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="section-title">Барлық курстар</h1>
+        <p class="section-sub">Курсты басып, толық ақпаратын көр және жазыл</p>
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="🔍 Курс атын іздеу..." class="filters__input" aria-label="Іздеу">
+            <select id="categoryFilter" class="filters__select" aria-label="Санат">
+                <option value="all">Барлық санаттар</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="design">Дизайн</option>
+                <option value="python">Python</option>
+            </select>
+            <button class="btn btn--primary" data-open="addModal">+ Курс қосу</button>
+        </div>
+        <div class="courses__grid" id="coursesGrid" data-dyn></div>
+    </main>
+    <footer class="footer"><div class="container"><p>© 2026 StudySwap KZ. Барлық құқықтар қорғалған.</p></div></footer>
+    <div class="modal" id="courseModal"><div class="modal__content">
+        <button class="modal__close" data-close aria-label="Жабу">×</button>
+        <div id="courseBody" data-dyn></div>
+        <button class="btn btn--primary" id="enrollBtn" data-dyn>Курсқа жазылу</button>
+    </div></div>
+    <div class="modal" id="addModal"><div class="modal__content">
+        <button class="modal__close" data-close aria-label="Жабу">×</button>
+        <h2>Жаңа курс қосу</h2>
+        <form id="addCourseForm" class="form">
+            <label for="cTitle">Курс аты</label><input type="text" id="cTitle" name="cTitle" required>
+            <label for="cCategory">Санаты</label>
+            <select id="cCategory" name="cCategory"><option value="frontend">Frontend</option><option value="backend">Backend</option><option value="design">Дизайн</option><option value="python">Python</option></select>
+            <label for="cPrice">Бағасы</label><input type="text" id="cPrice" name="cPrice" placeholder="Тегін">
+            <button type="submit" class="btn btn--primary">Қосу</button>
+        </form>
+    </div></div>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/courses.js"></script>
+</body>
+</html>
